@@ -1,0 +1,49 @@
+###
+### A complete description of a Prefect Deployment for flow 'parent_flow_to_gbq'
+###
+name: ETL I want
+description: null
+version: 1dd0fa55d1063fdb1d1be478d4ae9447
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {"colors":["yellow", "green"], "months": [1,2,3], "years":[2020, 2021]}
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: parent_flow_to_gbq
+manifest_path: null
+storage: null
+path: /Users/ebube/Desktop/CodeWorks/DataEngineering/zoomcamp/week_2/prefect-demo
+entrypoint: etl_gcs_to_bq.py:parent_etl_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    colors:
+      title: colors
+      position: 0
+    months:
+      title: months
+      position: 1
+    years:
+      title: years
+      position: 2
+  required:
+  - colors
+  - months
+  - years
+  definitions: null
